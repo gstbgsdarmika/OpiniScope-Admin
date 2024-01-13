@@ -1,20 +1,399 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/style.css') }}"
-    />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1 class="mb-4 text-4xl font-bold text-gray-600">hello dunia</h1>
-    <h1 class="text-4xl text-center">Hello, world!</h1>
-  </body>
-</html>
+{% extends 'layout.html' %} {% block title %}
+<title>Beranda</title>
+{% endblock %} {% block content %}
+<div class="container grid grid-cols-12 gap-5 mx-auto">
+  <div class="col-span-8">
+    <div class="bg-[#5842BE] p-5 rounded-md text-white text-justify shadow-md">
+      <h1 class="text-2xl font-bold">Aplikasi OpiniScope</h1>
+      <p class="pt-2">
+        OpiniScope, sebuah aplikasi canggih untuk menganalisis sentimen tweet di
+        Twitter, memanfaatkan algoritma SVM (Support Vector Machine) dan seleksi
+        fitur Mutual Information. Dengan integrasi teknologi terkini ini,
+        OpiniScope memberikan hasil analisis yang akurat dan relevan,
+        memungkinkan pengguna memahami dengan lebih baik pandangan dan perasaan
+        yang tercermin dalam pesan-pesan singkat di Twitter.
+      </p>
+    </div>
+  </div>
+  <div class="col-span-4">
+    <div
+      class="flex flex-col justify-center h-[225px] p-5 bg-white rounded-md shadow-md"
+    >
+      <h2 class="text-lg text-[#3B3B3B] font-bold">Info Data</h2>
+      <div class="flex items-center gap-3 pt-3">
+        <div class="bg-[#5842BE] p-1.5 rounded-lg">
+          <img
+            src="{{ url_for('static', filename='images/icons/folder-open.svg') }}"
+            alt="Login Image"
+            class="object-cover"
+          />
+        </div>
+        <div>
+          <p class="text-base font-bold text-[#3B3B3B]">Data Latih</p>
+          <p class="text-sm text-[#59595A]">800</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3 pt-3">
+        <div class="bg-[#8F77FF] p-1.5 rounded-lg">
+          <img
+            src="{{ url_for('static', filename='images/icons/folder-open.svg') }}"
+            alt="Login Image"
+            class="object-cover"
+          />
+        </div>
+        <div>
+          <p class="text-base font-bold text-[#3B3B3B]">Data Uji</p>
+          <p class="text-sm text-[#59595A]">200</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-8">
+    <div
+      id="hs-multiple-area-charts-compare-two-tooltip"
+      class="p-5 bg-white rounded-md shadow-md"
+    >
+      <h1 class="text-[#3B3B3B] text-base font-bold">
+        Persentase Pengujian Akurasi
+      </h1>
+    </div>
+  </div>
+  <div class="col-span-4">
+    <div class="flex flex-col gap-5">
+      <div
+        class="flex flex-col justify-center h-[190px] p-5 bg-white rounded-md shadow-md"
+      >
+        <h1 class="text-[#3B3B3B] text-base font-bold mb-1">
+          Persentase Data Latih
+        </h1>
+        <div id="hs-pie-chart"></div>
+      </div>
+      <div class="p-5 bg-white rounded-md shadow-md">
+        <h1 class="text-[#3B3B3B] text-base font-bold mb-2">
+          Table Pengujian Sistem
+        </h1>
+        <table class="min-w-full border">
+          <thead>
+            <tr>
+              <th
+                scope="col"
+                class="border px-6 py-2 text-xs font-medium text-white uppercase text-start bg-[#5842BE] w-1/2"
+              >
+                Fitur
+              </th>
+              <th
+                scope="col"
+                class="border px-6 py-2 text-xs font-medium text-white uppercase text-start bg-[#5842BE] w-1/2"
+              >
+                Akurasi
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td
+                class="border px-6 py-2 text-sm font-medium text-[#3B3B3B] whitespace-nowrap w-1/2"
+              >
+                60%
+              </td>
+              <td
+                class="border px-6 py-2 text-sm font-medium text-[#3B3B3B] whitespace-nowrap w-1/2"
+              >
+                80%
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="border px-6 py-2 text-sm font-medium text-[#3B3B3B] whitespace-nowrap w-1/2"
+              >
+                80%
+              </td>
+              <td
+                class="border px-6 py-2 text-sm font-medium text-[#3B3B3B] whitespace-nowrap w-1/2"
+              >
+                85%
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="border px-6 py-2 text-sm font-medium text-[#3B3B3B] whitespace-nowrap w-1/2"
+              >
+                90%
+              </td>
+              <td
+                class="border px-6 py-2 text-sm font-medium text-[#3B3B3B] whitespace-nowrap w-1/2"
+              >
+                90%
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="border px-6 py-2 text-sm font-medium text-[#3B3B3B] whitespace-nowrap w-1/2"
+              >
+                100%
+              </td>
+              <td
+                class="border px-6 py-2 text-sm font-medium text-[#3B3B3B] whitespace-nowrap w-1/2"
+              >
+                88%
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  window.addEventListener("load", () => {
+    (function () {
+      buildChart(
+        "#hs-multiple-area-charts-compare-two-tooltip",
+        (mode) => ({
+          chart: {
+            height: 400,
+            type: "area",
+            toolbar: {
+              show: false,
+            },
+            zoom: {
+              enabled: false,
+            },
+          },
+          series: [
+            {
+              name: "akurasi",
+              data: [80, 85, 90, 88],
+            },
+          ],
+          legend: {
+            show: false,
+          },
+          dataLabels: {
+            enabled: true,
+          },
+          stroke: {
+            curve: "straight",
+            width: 2,
+          },
+          grid: {
+            strokeDashArray: 2,
+          },
+          fill: {
+            type: "gradient",
+            gradient: {
+              type: "vertical",
+              shadeIntensity: 1,
+              opacityFrom: 0.1,
+              opacityTo: 0.8,
+            },
+          },
+          xaxis: {
+            type: "category",
+            tickPlacement: "on",
+            categories: ["60% fitur", "80% fitur", "90% fitur", "100% fitur"],
+            axisBorder: {
+              show: false,
+            },
+            axisTicks: {
+              show: false,
+            },
+            crosshairs: {
+              stroke: {
+                dashArray: 0,
+              },
+              dropShadow: {
+                show: false,
+              },
+            },
+            tooltip: {
+              enabled: false,
+            },
+            labels: {
+              style: {
+                colors: "#9ca3af",
+                fontSize: "13px",
+                fontFamily: "Poppins, ui-sans-serif",
+                fontWeight: 400,
+              },
+              formatter: (title) => {
+                let t = title;
+
+                if (t) {
+                  const newT = t.split(" ");
+                  t = `${newT[0]} ${newT[1].slice(0, 8)}`;
+                }
+
+                return t;
+              },
+            },
+          },
+          yaxis: {
+            labels: {
+              align: "left",
+              minWidth: 0,
+              maxWidth: 140,
+              style: {
+                colors: "#9ca3af",
+                fontSize: "13px",
+                fontFamily: "Poppins, ui-sans-serif",
+                fontWeight: 400,
+              },
+              formatter: (value) => `${value}%`,
+            },
+          },
+          tooltip: {
+            x: {
+              format: "MMMM yyyy",
+            },
+            y: {
+              formatter: (value) => `${value}%`,
+            },
+            custom: function (props) {
+              return buildTooltipCompareTwo(props, {
+                title: "Revenue",
+                mode,
+                hasTextLabel: true,
+                wrapperExtClasses: "min-w-[200px]",
+                markerExtClasses: "!rounded-sm",
+              });
+            },
+          },
+          responsive: [
+            {
+              breakpoint: 568,
+              options: {
+                chart: {
+                  height: 300,
+                },
+                labels: {
+                  style: {
+                    colors: "#9ca3af",
+                    fontSize: "11px",
+                    fontFamily: "Poppins, ui-sans-serif",
+                    fontWeight: 400,
+                  },
+                  offsetX: -2,
+                  formatter: (title) => title.slice(0, 3),
+                },
+                yaxis: {
+                  labels: {
+                    align: "left",
+                    minWidth: 0,
+                    maxWidth: 140,
+                    style: {
+                      colors: "#9ca3af",
+                      fontSize: "11px",
+                      fontFamily: "Poppins, ui-sans-serif",
+                      fontWeight: 400,
+                    },
+                    formatter: (value) => `${value}%`,
+                  },
+                },
+              },
+            },
+          ],
+        }),
+        {
+          colors: ["#5842BE", "#8F77FF"],
+          fill: {
+            gradient: {
+              stops: [0, 90, 100],
+            },
+          },
+          grid: {
+            borderColor: "#e5e7eb",
+          },
+        },
+        {
+          colors: ["#3b82f6", "#a855f7"],
+          fill: {
+            gradient: {
+              stops: [100, 90, 0],
+            },
+          },
+          grid: {
+            borderColor: "#374151",
+          },
+        }
+      );
+    })();
+  });
+  window.addEventListener("load", () => {
+    (function () {
+      buildChart(
+        "#hs-pie-chart",
+        () => ({
+          chart: {
+            height: "100%",
+            type: "pie",
+            zoom: {
+              enabled: false,
+            },
+          },
+          series: [65, 35],
+          labels: ["Positif", "Negatif"],
+          title: {
+            show: false,
+          },
+          dataLabels: {
+            style: {
+              fontSize: "12px",
+              fontFamily: "Poppins, ui-sans-serif",
+              fontWeight: "400",
+              colors: ["#fff", "#fff"],
+            },
+            dropShadow: {
+              enabled: false,
+            },
+            formatter: (value) => `${value.toFixed(1)} %`,
+          },
+          plotOptions: {
+            pie: {
+              dataLabels: {
+                offset: -20,
+              },
+            },
+          },
+          legend: {
+            show: true,
+          },
+          stroke: {
+            width: 2,
+          },
+          grid: {
+            padding: {
+              top: 0,
+              bottom: 0,
+              left: 0,
+              right: 0,
+            },
+          },
+          tooltip: {
+            enabled: true,
+          },
+          states: {
+            hover: {
+              filter: {
+                type: "none ",
+              },
+            },
+          },
+        }),
+        {
+          colors: ["#5842BE", "#8F77FF"],
+          stroke: {
+            colors: ["rgb(255, 255, 255)"],
+          },
+        },
+        {
+          colors: ["#8F77FF", "#5842BE"],
+          stroke: {
+            colors: ["rgb(38, 38, 38)"],
+          },
+        }
+      );
+    })();
+  });
+</script>
+{% endblock %}

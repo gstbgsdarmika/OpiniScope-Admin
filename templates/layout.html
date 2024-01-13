@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="{{ url_for('static', filename='images/icons/logo.svg') }}"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% block title %} {% endblock %}
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='dist/css/output.css') }}"
+    />
+    <link rel="stylesheet" href="{{ url_for('serve_apexcharts_css') }}" />
+  </head>
+  <body class="bg-gray-50">
+    <!-- ========== HEADER ========== -->
+    <header
+      class="sticky top-0 inset-x-0 flex flex-wrap sm:justify-start sm:flex-nowrap z-[48] w-full bg-white border-b text-sm py-2.5 sm:py-4 lg:ps-64"
+    >
+      <nav
+        class="flex items-center w-full px-4 mx-auto basis-full sm:px-6 md:px-8"
+        aria-label="Global"
+      >
+        <div
+          class="flex items-center justify-end w-full ms-auto sm:justify-between sm:gap-x-3 sm:order-3"
+        >
+          <div class="sm:hidden">
+            <button
+              type="button"
+              class="w-[2.375rem] h-[2.375rem] inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-[#5842BE] disabled:opacity-50 disabled:pointer-events-none"
+            >
+              <svg
+                class="flex-shrink-0 w-4 h-4"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="hidden sm:block">
+            <div class="relative">
+              <div
+                class="absolute inset-y-0 z-20 flex items-center pointer-events-none start-0"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4 18H11M4 6H20H4ZM4 12H20H4Z"
+                    stroke="#59595A"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-row items-center justify-end gap-x-5">
+            <div class="flex-col text-right">
+              <p class="text-base font-semibold text-gray-800">Bgs Darmika</p>
+              <p class="text-sm tracking-tight text-gray-800">Admin</p>
+            </div>
+            <div
+              class="hs-dropdown relative inline-flex [--placement:bottom-right]"
+            >
+              <button
+                id="hs-dropdown-with-header"
+                type="button"
+                class="inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-[#5842BE] disabled:opacity-50 disabled:pointer-events-none"
+              >
+                <img
+                  class="inline-block h-[2.375rem] w-[2.375rem] rounded-full ring-2 ring-white"
+                  src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
+                  alt="Image Description"
+                />
+              </button>
+
+              <div
+                class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-[15rem] bg-white shadow-md rounded-lg p-2"
+                aria-labelledby="hs-dropdown-with-header"
+              >
+                <div class="py-3 px-5 -m-2 bg-[#5842BE] rounded-t-lg">
+                  <p class="text-sm text-white">Signed in as</p>
+                  <p class="text-sm font-medium text-white">
+                    BgsDarmika@gmail.com
+                  </p>
+                </div>
+                <div class="py-2 mt-2 first:pt-0 last:pb-0">
+                  <a
+                    class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-[#5842BE] focus:ring-2 focus:ring-blue-50"
+                    href="#"
+                  >
+                    <svg
+                      class="flex-shrink-0 w-4 h-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+                      <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+                    </svg>
+                    Newsletter
+                  </a>
+                  <a
+                    class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-[#5842BE] focus:ring-2 focus:ring-blue-50"
+                    href="#"
+                  >
+                    <svg
+                      class="flex-shrink-0 w-4 h-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"
+                      />
+                      <path d="M3 6h18" />
+                      <path d="M16 10a4 4 0 0 1-8 0" />
+                    </svg>
+                    Purchases
+                  </a>
+                  <a
+                    class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-[#5842BE] focus:ring-2 focus:ring-blue-50"
+                    href="#"
+                  >
+                    <svg
+                      class="flex-shrink-0 w-4 h-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"
+                      />
+                      <path d="M12 12v9" />
+                      <path d="m8 17 4 4 4-4" />
+                    </svg>
+                    Downloads
+                  </a>
+                  <a
+                    class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-[#5842BE] focus:ring-2 focus:ring-blue-50"
+                    href="#"
+                  >
+                    <svg
+                      class="flex-shrink-0 w-4 h-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                      <circle cx="9" cy="7" r="4" />
+                      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                    Team Account
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- ========== END HEADER ========== -->
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <!-- Sidebar -->
+    <div
+      id="application-sidebar"
+      class="hs-overlay hs-overlay-open:translate-x-0 -translate-x-full transition-all duration-300 transform hidden fixed top-0 start-0 bottom-0 z-[60] w-64 bg-white border-e border-gray-200 pt-4 pb-10 overflow-y-auto lg:block lg:translate-x-0 lg:end-auto lg:bottom-0 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-[#5842BE] [&::-webkit-scrollbar-thumb]:bg-gray-300"
+    >
+      <div class="flex items-center gap-2 px-5">
+        <img
+          src="{{ url_for('static', filename='images/icons/logo.svg') }}"
+          alt="Logo Image"
+          class="object-cover"
+        />
+        <a
+          class="flex-none text-xl font-bold text-[#59595A]"
+          href="#"
+          aria-label="Brand"
+          >OpiniScope</a
+        >
+      </div>
+
+      <nav
+        class="flex flex-col flex-wrap w-full p-6 hs-accordion-group"
+        data-hs-accordion-always-open
+      >
+        <ul class="space-y-1.5">
+          <li>
+            <a
+              class="flex items-center gap-x-3.5 py-2 px-2.5 bg-[#5842BE] text-base font-medium text-white rounded-lg hover:bg-[#5842BE]"
+              href="#"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.58579 5.08579C4.21071 5.46086 4 5.96957 4 6.5V8.5C4 9.03043 4.21071 9.53914 4.58579 9.91421C4.96086 10.2893 5.46957 10.5 6 10.5H8C8.53043 10.5 9.03914 10.2893 9.41421 9.91421C9.78929 9.53914 10 9.03043 10 8.5V6.5C10 5.96957 9.78929 5.46086 9.41421 5.08579C9.03914 4.71071 8.53043 4.5 8 4.5H6C5.46957 4.5 4.96086 4.71071 4.58579 5.08579Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M14.5858 5.08579C14.2107 5.46086 14 5.96957 14 6.5V8.5C14 9.03043 14.2107 9.53914 14.5858 9.91421C14.9609 10.2893 15.4696 10.5 16 10.5H18C18.5304 10.5 19.0391 10.2893 19.4142 9.91421C19.7893 9.53914 20 9.03043 20 8.5V6.5C20 5.96957 19.7893 5.46086 19.4142 5.08579C19.0391 4.71071 18.5304 4.5 18 4.5H16C15.4696 4.5 14.9609 4.71071 14.5858 5.08579Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M4.58579 15.0858C4.21071 15.4609 4 15.9696 4 16.5V18.5C4 19.0304 4.21071 19.5391 4.58579 19.9142C4.96086 20.2893 5.46957 20.5 6 20.5H8C8.53043 20.5 9.03914 20.2893 9.41421 19.9142C9.78929 19.5391 10 19.0304 10 18.5V16.5C10 15.9696 9.78929 15.4609 9.41421 15.0858C9.03914 14.7107 8.53043 14.5 8 14.5H6C5.46957 14.5 4.96086 14.7107 4.58579 15.0858Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M14.5858 15.0858C14.2107 15.4609 14 15.9696 14 16.5V18.5C14 19.0304 14.2107 19.5391 14.5858 19.9142C14.9609 20.2893 15.4696 20.5 16 20.5H18C18.5304 20.5 19.0391 20.2893 19.4142 19.9142C19.7893 19.5391 20 19.0304 20 18.5V16.5C20 15.9696 19.7893 15.4609 19.4142 15.0858C19.0391 14.7107 18.5304 14.5 18 14.5H16C15.4696 14.5 14.9609 14.7107 14.5858 15.0858Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              Dashboard
+            </a>
+          </li>
+
+          <li class="hs-accordion" id="projects-accordion">
+            <button
+              type="button"
+              class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 hs-accordion-active:text-[#5842BE] hs-accordion-active:hover:bg-transparent text-base font-medium text-[#8F8F8F] rounded-lg hover:bg-[#5842BE] hover:text-white"
+            >
+              <svg
+                width="24"
+                height="25"
+                viewBox="0 0 24 25"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4 7.5V17.5C4 19.71 7.582 21.5 12 21.5C16.418 21.5 20 19.71 20 17.5V7.5M4 7.5C4 9.71 7.582 11.5 12 11.5C16.418 11.5 20 9.71 20 7.5M4 7.5C4 5.29 7.582 3.5 12 3.5C16.418 3.5 20 5.29 20 7.5M20 12.5C20 14.71 16.418 16.5 12 16.5C7.582 16.5 4 14.71 4 12.5"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              Data
+              <svg
+                class="hidden hs-accordion-active:block ms-auto"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 15L12 8L19 15"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+
+              <svg
+                class="block hs-accordion-active:hidden ms-auto"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="chevron-down">
+                  <path
+                    id="Vector"
+                    d="M19 9.5L12 16.5L5 9.5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+              </svg>
+            </button>
+
+            <div
+              id="projects-accordion-child"
+              class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden"
+            >
+              <ul class="pt-2 ps-2">
+                <li>
+                  <a
+                    class="flex items-center gap-x-3.5 py-2 px-2.5 text-base font-medium text-[#8F8F8F] rounded-lg hover:bg-[#5842BE] hover:text-white"
+                    href="#"
+                  >
+                    Data Latih
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="flex items-center gap-x-3.5 py-2 px-2.5 text-base font-medium text-[#8F8F8F] rounded-lg hover:bg-[#5842BE] hover:text-white"
+                    href="#"
+                  >
+                    Data Uji
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="flex items-center gap-x-3.5 py-2 px-2.5 text-base font-medium text-[#8F8F8F] rounded-lg hover:bg-[#5842BE] hover:text-white"
+                    href="#"
+                  >
+                    Hasil Preprocessing
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li>
+            <a
+              class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-base font-medium text-[#8F8F8F] rounded-lg hover:bg-[#5842BE] hover:text-white"
+              href="#"
+            >
+              <svg
+                class="flex-shrink-0"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.29289 4.79289C4.10536 4.98043 4 5.23478 4 5.5V7.5C4 7.76522 4.10536 8.01957 4.29289 8.20711C4.48043 8.39464 4.73478 8.5 5 8.5H19C19.2652 8.5 19.5196 8.39464 19.7071 8.20711C19.8946 8.01957 20 7.76522 20 7.5V5.5C20 5.23478 19.8946 4.98043 19.7071 4.79289C19.5196 4.60536 19.2652 4.5 19 4.5H5C4.73478 4.5 4.48043 4.60536 4.29289 4.79289Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M4.29289 12.7929C4.10536 12.9804 4 13.2348 4 13.5V19.5C4 19.7652 4.10536 20.0196 4.29289 20.2071C4.48043 20.3946 4.73478 20.5 5 20.5H11C11.2652 20.5 11.5196 20.3946 11.7071 20.2071C11.8946 20.0196 12 19.7652 12 19.5V13.5C12 13.2348 11.8946 12.9804 11.7071 12.7929C11.5196 12.6054 11.2652 12.5 11 12.5H5C4.73478 12.5 4.48043 12.6054 4.29289 12.7929Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M16.2929 12.7929C16.1054 12.9804 16 13.2348 16 13.5V19.5C16 19.7652 16.1054 20.0196 16.2929 20.2071C16.4804 20.3946 16.7348 20.5 17 20.5H19C19.2652 20.5 19.5196 20.3946 19.7071 20.2071C19.8946 20.0196 20 19.7652 20 19.5V13.5C20 13.2348 19.8946 12.9804 19.7071 12.7929C19.5196 12.6054 19.2652 12.5 19 12.5H17C16.7348 12.5 16.4804 12.6054 16.2929 12.7929Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              Klasifikasi
+            </a>
+          </li>
+
+          <li>
+            <a
+              class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-base font-medium text-[#8F8F8F] rounded-lg hover:bg-[#5842BE] hover:text-white"
+              href="#"
+            >
+              <svg
+                class="flex-shrink-0"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 17.5V15.5M12 17.5V13.5M15 17.5V11.5M17 21.5H7C6.46957 21.5 5.96086 21.2893 5.58579 20.9142C5.21071 20.5391 5 20.0304 5 19.5V5.5C5 4.96957 5.21071 4.46086 5.58579 4.08579C5.96086 3.71071 6.46957 3.5 7 3.5H12.586C12.8512 3.50006 13.1055 3.60545 13.293 3.793L18.707 9.207C18.8946 9.39449 18.9999 9.6488 19 9.914V19.5C19 20.0304 18.7893 20.5391 18.4142 20.9142C18.0391 21.2893 17.5304 21.5 17 21.5Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+
+              Hasil Analisis
+            </a>
+          </li>
+
+          <li>
+            <a
+              class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-base font-medium text-[#8F8F8F] rounded-lg hover:bg-[#5842BE] hover:text-white"
+              href="#"
+            >
+              <svg
+                class="flex-shrink-0"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 16.5L21 12.5M21 12.5L17 8.5M21 12.5H7M13 16.5V17.5C13 18.2956 12.6839 19.0587 12.1213 19.6213C11.5587 20.1839 10.7956 20.5 10 20.5H6C5.20435 20.5 4.44129 20.1839 3.87868 19.6213C3.31607 19.0587 3 18.2956 3 17.5V7.5C3 6.70435 3.31607 5.94129 3.87868 5.37868C4.44129 4.81607 5.20435 4.5 6 4.5H10C10.7956 4.5 11.5587 4.81607 12.1213 5.37868C12.6839 5.94129 13 6.70435 13 7.5V8.5"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+
+              Keluar
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- End Sidebar -->
+
+    <!-- Content -->
+    <div class="w-full px-4 py-9 bg-neutral-100 sm:px-6 md:px-8 lg:ps-72">
+      {% block content %} {% endblock %}
+    </div>
+    <!-- End Content -->
+    <!-- ========== END MAIN CONTENT ========== -->
+  </body>
+  <script src="{{ url_for('serve_preline_js') }}"></script>
+  <script src="{{ url_for('serve_lodash_js') }}"></script>
+  <script src="{{ url_for('serve_apexcharts_js') }}"></script>
+  <script src="{{ url_for('serve_apexcharts_css') }}"></script>
+  <script src="https://preline.co/assets/js/hs-apexcharts-helpers.js"></script>
+</html>
