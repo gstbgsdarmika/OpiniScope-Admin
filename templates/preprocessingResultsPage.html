@@ -1,0 +1,323 @@
+{% extends 'layout.html' %} {% block title %}
+<title>Hasil Preprocessing</title>
+{% endblock %} {% block content %}
+<div class="container mx-auto">
+  <div>
+    <h1 class="text-[#3B3B3B] font-semibold text-2xl">Hasil Preprocessing</h1>
+    <p class="text-[#787F89] text-sm">Teks yang Siap untuk Analisis Sentimen</p>
+  </div>
+  <div class="w-full p-5 mt-3 bg-white rounded-md shadow-md">
+    <div class="flex justify-end">
+      <div class="relative max-w-xs">
+        <label class="sr-only">Search</label>
+        <input
+          type="text"
+          name="hs-table-with-pagination-search"
+          id="hs-table-with-pagination-search"
+          class="block w-full px-3 py-2 text-sm border border-gray-300 rounded-lg ps-9 focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
+          placeholder="Cari komentar"
+        />
+        <div
+          class="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-3"
+        >
+          <svg
+            class="w-4 h-4 text-gray-400"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="overflow-x-auto">
+      <div class="inline-block min-w-full mt-3 align-middle">
+        <div class="border divide-y divide-gray-200 rounded-lg">
+          <div class="overflow-hidden">
+            <table class="min-w-full divide-y divide-gray-200">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th
+                    scope="col"
+                    class="px-3 py-2 text-base font-semibold text-gray-500 text-start"
+                  >
+                    No
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-3 py-2 text-base font-semibold text-gray-500 text-start"
+                  >
+                    Komentar
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-4 py-2 text-base font-semibold text-gray-500 text-start"
+                  >
+                    Hasil Preprocessing
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr>
+                  <td
+                    class="px-4 py-4 text-sm text-center text-gray-500 font-sm whitespace-nowrap"
+                  >
+                    1
+                  </td>
+                  <td
+                    class="max-w-md px-4 py-4 overflow-hidden text-sm text-gray-500"
+                  >
+                    <div class="comment-content">
+                      Ganjar Pranowo calon Presiden 2024 penerus Presiden Jokowi
+                      #GanjarPranowo #GanjarCapres #GanjarPresiden
+                      #GanjarMenangTotal #GanjarPilihanRakyat #Presiden2024
+                      #GanjarPresiden2024 #Pilpres2024 #Pemilu2024 #LapakGanjar
+                      https://t.co/YTAe02BxcS
+                    </div>
+                  </td>
+                  <td
+                    class="max-w-md px-4 py-4 overflow-hidden text-sm text-gray-500"
+                  >
+                    <div class="comment-content">
+                      Ganjar Pranowo calon Presiden 2024 penerus Presiden Jokowi
+                      #GanjarPranowo #GanjarCapres #GanjarPresiden
+                      #GanjarMenangTotal #GanjarPilihanRakyat #Presiden2024
+                      #GanjarPresiden2024 #Pilpres2024 #Pemilu2024 #LapakGanjar
+                      https://t.co/YTAe02BxcS
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="px-4 py-4 text-sm text-center text-gray-500 font-sm whitespace-nowrap"
+                  >
+                    2
+                  </td>
+                  <td
+                    class="max-w-md px-4 py-4 overflow-hidden text-sm text-gray-500"
+                  >
+                    <div class="comment-content">
+                      @Gus_Raharjo Setuju.... Mari kita ciptakan PEMILU 2024
+                      damai dan sejuk. Buat apa kita ributÂ² bd pilihan monggo,
+                      biar nanti yg menang dan yg klh ttp harmonis dan legowo,
+                      hny itu hrpn Sy.
+                    </div>
+                  </td>
+                  <td
+                    class="max-w-md px-4 py-4 overflow-hidden text-sm text-gray-500"
+                  >
+                    <div class="comment-content">
+                      Ganjar Pranowo calon Presiden 2024 penerus Presiden Jokowi
+                      #GanjarPranowo #GanjarCapres #GanjarPresiden
+                      #GanjarMenangTotal #GanjarPilihanRakyat #Presiden2024
+                      #GanjarPresiden2024 #Pilpres2024 #Pemilu2024 #LapakGanjar
+                      https://t.co/YTAe02BxcS
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="px-4 py-4 text-sm text-center text-gray-500 font-sm whitespace-nowrap"
+                  >
+                    3
+                  </td>
+                  <td
+                    class="max-w-md px-4 py-4 overflow-hidden text-sm text-gray-500"
+                  >
+                    <div class="comment-content">
+                      Saya yakin Prabowo akan menjadi lawan yang tangguh dan
+                      mampu membawa perubahan positif bagi Indonesia.
+                      #pilpres2024 #dekade08 #mendingprabowo
+                      #terusmajubersamaprabowo #pemilu2024
+                    </div>
+                  </td>
+                  <td
+                    class="max-w-md px-4 py-4 overflow-hidden text-sm text-gray-500"
+                  >
+                    <div class="comment-content">
+                      Ganjar Pranowo calon Presiden 2024 penerus Presiden Jokowi
+                      #GanjarPranowo #GanjarCapres #GanjarPresiden
+                      #GanjarMenangTotal #GanjarPilihanRakyat #Presiden2024
+                      #GanjarPresiden2024 #Pilpres2024 #Pemilu2024 #LapakGanjar
+                      https://t.co/YTAe02BxcS
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="px-4 py-4 text-sm text-center text-gray-500 font-sm whitespace-nowrap"
+                  >
+                    4
+                  </td>
+                  <td
+                    class="max-w-md px-4 py-4 overflow-hidden text-sm text-gray-500"
+                  >
+                    <div class="comment-content">
+                      Saya harap dalam pertarungan politik ini, semua tokoh dan
+                      masayarakat yang terlibat dapat tetap menjaga kesantuna
+                      demi suksesnya Pemilu tahun 2024," ucap Jokowi."
+                    </div>
+                  </td>
+                  <td
+                    class="max-w-md px-4 py-4 overflow-hidden text-sm text-gray-500"
+                  >
+                    <div class="comment-content">
+                      Ganjar Pranowo calon Presiden 2024 penerus Presiden Jokowi
+                      #GanjarPranowo #GanjarCapres #GanjarPresiden
+                      #GanjarMenangTotal #GanjarPilihanRakyat #Presiden2024
+                      #GanjarPresiden2024 #Pilpres2024 #Pemilu2024 #LapakGanjar
+                      https://t.co/YTAe02BxcS
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="px-4 py-4 text-sm text-center text-gray-500 font-sm whitespace-nowrap"
+                  >
+                    5
+                  </td>
+                  <td
+                    class="max-w-md px-4 py-4 overflow-hidden text-sm text-gray-500"
+                  >
+                    <div class="comment-content">
+                      Pemilu 2024 tampak sangat berbeda dengan Pemilu 2019.
+                      Kalau di Pemilu 2019 pendukung Pak Prabowo menyebarkan
+                      hoax, sekarang Pak Prabowo yang diserang hoax pendukung
+                      capres lainnya. Kalau saya sih percaya pada penjelasan Pak
+                      Jokowi saja. https://t.co/kDmh4nwh7S
+                    </div>
+                  </td>
+                  <td
+                    class="max-w-md px-4 py-4 overflow-hidden text-sm text-gray-500"
+                  >
+                    <div class="comment-content">
+                      Ganjar Pranowo calon Presiden 2024 penerus Presiden Jokowi
+                      #GanjarPranowo #GanjarCapres #GanjarPresiden
+                      #GanjarMenangTotal #GanjarPilihanRakyat #Presiden2024
+                      #GanjarPresiden2024 #Pilpres2024 #Pemilu2024 #LapakGanjar
+                      https://t.co/YTAe02BxcS
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="p-4">
+            <nav class="flex items-center justify-between">
+              <p class="text-xs font-medium text-gray-500">
+                Menampilkan 1 - 10 dari 500 data
+              </p>
+              <div class="flex gap-3">
+                <button
+                  type="button"
+                  class="w-9 h-9 p-2.5 flex items-center rounded-full text-gray-500 border border-zinc-300 hover:bg-[#5842BE] hover:text-white"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g id="chevron-left">
+                      <path
+                        id="Vector"
+                        d="M10 12.6666L5.33334 7.99992L10 3.33325"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </g>
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  class="flex justify-center items-center text-white bg-[#5842BE] hover:bg-[#4427c5] w-9 h-9 p-2.5 text-sm rounded-full disabled:opacity-50 disabled:pointer-events-none"
+                  aria-current="page"
+                >
+                  1
+                </button>
+                <button
+                  type="button"
+                  class="flex justify-center items-center text-gray-800 border border-zinc-300 hover:bg-[#5842BE] hover:text-white w-9 h-9 p-2.5 text-sm rounded-full disabled:opacity-50 disabled:pointer-events-none"
+                >
+                  2
+                </button>
+                <div class="inline-block hs-tooltip">
+                  <button
+                    type="button"
+                    class="hs-tooltip-toggle group min-h-[38px] min-w-[38px] flex justify-center items-center text-gray-400 hover:text-blue-600 p-2 text-sm rounded-lg focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
+                  >
+                    <span class="text-xs text-gray-500 group-hover:hidden"
+                      >•••</span
+                    >
+                    <svg
+                      class="flex-shrink-0 hidden w-5 h-5 text-gray-500 group-hover:block"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="m6 17 5-5-5-5" stroke="currentColor" />
+                      <path d="m13 17 5-5-5-5" stroke="currentColor" />
+                    </svg>
+                    <span
+                      class="absolute z-10 invisible inline-block px-2 py-1 text-xs font-medium text-white transition-opacity bg-[#5842BE] rounded shadow-sm opacity-0 hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible"
+                      role="tooltip"
+                    >
+                      Next 4 pages
+                    </span>
+                  </button>
+                </div>
+                <button
+                  type="button"
+                  class="flex justify-center items-center text-gray-800 border border-zinc-300 hover:bg-[#5842BE] hover:text-white w-9 h-9 p-2.5 text-sm rounded-full disabled:opacity-50 disabled:pointer-events-none"
+                >
+                  5
+                </button>
+                <button
+                  type="button"
+                  class="w-9 h-9 p-2.5 flex items-center rounded-full text-gray-500 border border-zinc-300 hover:bg-[#5842BE] hover:text-white"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g id="chevron-right">
+                      <path
+                        id="Vector"
+                        d="M6 3.33325L10.6667 7.99992L6 12.6666"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </g>
+                  </svg>
+                </button>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

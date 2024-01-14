@@ -14,6 +14,18 @@ app.config['SECRET_KEY'] = Config.SECRET_KEY
 def index():
     return render_template('index.html') 
 
+@app.route('/data-latih') 
+def trainingDataPage():
+    return render_template('trainingDataPage.html') 
+
+@app.route('/data-uji') 
+def testingDataPage():
+    return render_template('testingDataPage.html') 
+
+@app.route('/hasil-preprocessing') 
+def preprocessingResultsPage():
+    return render_template('preprocessingResultsPage.html') 
+
 @app.route("/preline.js")
 def serve_preline_js():
     return send_from_directory("node_modules/preline/dist", "preline.js")
