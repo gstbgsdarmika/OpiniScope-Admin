@@ -1,13 +1,48 @@
 {% extends 'layout.html' %} {% block title %}
-<title>Hasil Preprocessing</title>
+<title>Klasifikasi</title>
 {% endblock %} {% block content %}
 <div class="container mx-auto">
   <div>
-    <h1 class="text-[#3B3B3B] font-semibold text-2xl">Hasil Preprocessing</h1>
-    <p class="text-[#787F89] text-sm">Teks yang Siap untuk Analisis Sentimen</p>
+    <h1 class="text-[#3B3B3B] font-semibold text-2xl">Klasifikasi Sentimen</h1>
+    <p class="text-[#787F89] text-sm">
+      Analisis Prediksi dari Model Klasifikasi
+    </p>
   </div>
   <div class="w-full p-5 mt-3 bg-white rounded-md shadow-md">
-    <div class="flex justify-end">
+    <div class="flex justify-between">
+      <button
+        type="button"
+        class="text-white text-sm bg-[#5842BE] py-1.5 px-3.5 rounded-full inline-flex items-center gap-x-2 hover:bg-[#4427c5]"
+      >
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="fire">
+            <path
+              id="Vector"
+              d="M12 21.0002C14.1218 21.0002 16.1567 20.1573 17.657 18.657C18.401 17.9149 18.991 17.0331 19.393 16.0623C19.7951 15.0915 20.0014 14.0508 20 13C20.0013 11.9491 19.7948 10.9084 19.3926 9.93756C18.9903 8.96674 18.4001 8.08499 17.656 7.343C16.09 5.777 14 5 11.986 3C9.5 5 9 8 9 10C7 9 6.343 7.343 6.343 7.343C4.84267 8.84333 3.99979 10.8782 3.99979 13C3.99979 15.1218 4.84267 17.1567 6.343 18.657C7.84333 20.1573 9.87821 21.0002 12 21.0002Z"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              id="Vector_2"
+              d="M11.1277 16.8702C10.6563 16.7268 10.2274 16.4695 9.879 16.121C9.293 15.536 9 14.768 9 14H11L12.015 11C12.5078 11.0024 12.9923 11.1261 13.4259 11.3602C13.8595 11.5943 14.2288 11.9316 14.5011 12.3423C14.7733 12.753 14.9402 13.2245 14.987 13.715C15.0338 14.2056 14.9591 14.7001 14.7694 15.1548C14.5797 15.6096 14.2809 16.0107 13.8994 16.3226C13.5179 16.6345 13.0655 16.8476 12.5821 16.9431C12.0986 17.0386 11.5991 17.0135 11.1277 16.8702Z"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </g>
+        </svg>
+
+        Klasifikasi
+      </button>
       <div class="relative max-w-xs">
         <label class="sr-only">Search</label>
         <input
@@ -53,15 +88,21 @@
                   </th>
                   <th
                     scope="col"
-                    class="px-3 py-2 text-base font-semibold text-gray-500 text-start"
+                    class="px-4 py-2 text-base font-semibold text-gray-500 text-start"
                   >
                     Komentar
                   </th>
                   <th
                     scope="col"
-                    class="px-4 py-2 text-base font-semibold text-gray-500 text-start"
+                    class="px-4 py-2 w-10 text-base font-semibold text-gray-500 text-start"
                   >
-                    Hasil Preprocessing
+                    Klasifikasi Manual
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-4 py-2 w-10 text-base font-semibold text-gray-500 text-start"
+                  >
+                    Klasifikasi Sistem
                   </th>
                 </tr>
               </thead>
@@ -83,16 +124,11 @@
                       https://t.co/YTAe02BxcS
                     </div>
                   </td>
-                  <td
-                    class="max-w-md px-4 py-4 overflow-hidden text-sm text-gray-500"
-                  >
-                    <div class="comment-content">
-                      Ganjar Pranowo calon Presiden 2024 penerus Presiden Jokowi
-                      #GanjarPranowo #GanjarCapres #GanjarPresiden
-                      #GanjarMenangTotal #GanjarPilihanRakyat #Presiden2024
-                      #GanjarPresiden2024 #Pilpres2024 #Pemilu2024 #LapakGanjar
-                      https://t.co/YTAe02BxcS
-                    </div>
+                  <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                    Positif
+                  </td>
+                  <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                    Belum Diketaui
                   </td>
                 </tr>
                 <tr>
@@ -111,16 +147,11 @@
                       hny itu hrpn Sy.
                     </div>
                   </td>
-                  <td
-                    class="max-w-md px-4 py-4 overflow-hidden text-sm text-gray-500"
-                  >
-                    <div class="comment-content">
-                      Ganjar Pranowo calon Presiden 2024 penerus Presiden Jokowi
-                      #GanjarPranowo #GanjarCapres #GanjarPresiden
-                      #GanjarMenangTotal #GanjarPilihanRakyat #Presiden2024
-                      #GanjarPresiden2024 #Pilpres2024 #Pemilu2024 #LapakGanjar
-                      https://t.co/YTAe02BxcS
-                    </div>
+                  <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                    Positif
+                  </td>
+                  <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                    Belum Diketaui
                   </td>
                 </tr>
                 <tr>
@@ -139,16 +170,11 @@
                       #terusmajubersamaprabowo #pemilu2024
                     </div>
                   </td>
-                  <td
-                    class="max-w-md px-4 py-4 overflow-hidden text-sm text-gray-500"
-                  >
-                    <div class="comment-content">
-                      Ganjar Pranowo calon Presiden 2024 penerus Presiden Jokowi
-                      #GanjarPranowo #GanjarCapres #GanjarPresiden
-                      #GanjarMenangTotal #GanjarPilihanRakyat #Presiden2024
-                      #GanjarPresiden2024 #Pilpres2024 #Pemilu2024 #LapakGanjar
-                      https://t.co/YTAe02BxcS
-                    </div>
+                  <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                    Positif
+                  </td>
+                  <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                    Belum Diketaui
                   </td>
                 </tr>
                 <tr>
@@ -166,16 +192,11 @@
                       demi suksesnya Pemilu tahun 2024," ucap Jokowi."
                     </div>
                   </td>
-                  <td
-                    class="max-w-md px-4 py-4 overflow-hidden text-sm text-gray-500"
-                  >
-                    <div class="comment-content">
-                      Ganjar Pranowo calon Presiden 2024 penerus Presiden Jokowi
-                      #GanjarPranowo #GanjarCapres #GanjarPresiden
-                      #GanjarMenangTotal #GanjarPilihanRakyat #Presiden2024
-                      #GanjarPresiden2024 #Pilpres2024 #Pemilu2024 #LapakGanjar
-                      https://t.co/YTAe02BxcS
-                    </div>
+                  <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                    Positif
+                  </td>
+                  <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                    Belum Diketaui
                   </td>
                 </tr>
                 <tr>
@@ -195,16 +216,11 @@
                       Jokowi saja. https://t.co/kDmh4nwh7S
                     </div>
                   </td>
-                  <td
-                    class="max-w-md px-4 py-4 overflow-hidden text-sm text-gray-500"
-                  >
-                    <div class="comment-content">
-                      Ganjar Pranowo calon Presiden 2024 penerus Presiden Jokowi
-                      #GanjarPranowo #GanjarCapres #GanjarPresiden
-                      #GanjarMenangTotal #GanjarPilihanRakyat #Presiden2024
-                      #GanjarPresiden2024 #Pilpres2024 #Pemilu2024 #LapakGanjar
-                      https://t.co/YTAe02BxcS
-                    </div>
+                  <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                    Positif
+                  </td>
+                  <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                    Belum Diketaui
                   </td>
                 </tr>
               </tbody>
@@ -255,7 +271,7 @@
                 <div class="inline-block hs-tooltip">
                   <button
                     type="button"
-                    class="hs-tooltip-toggle group min-h-[38px] min-w-[38px] flex justify-center items-center text-gray-400 hover:text-blue-600 p-2 text-sm rounded-lg focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
+                    class="hs-tooltip-toggle group min-h-[38px] min-w-[38px] flex justify-center items-center text-gray-400 hover:text-blue-600 p-2 text-sm rounded-lg focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-gray-500 dark:hover:text-blue-500 dark:focus:bg-white/10"
                   >
                     <span class="text-xs text-gray-500 group-hover:hidden"
                       >•••</span

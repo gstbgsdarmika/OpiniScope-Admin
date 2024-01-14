@@ -237,7 +237,7 @@
         <ul class="space-y-1.5">
           <li>
             <a
-              class="flex items-center gap-x-3.5 py-2 px-2.5 bg-[#5842BE] text-base font-medium text-white rounded-lg hover:bg-[#5842BE]"
+              class="flex items-center gap-x-3.5 py-2 px-2.5 text-base font-medium rounded-lg {% if active_page == 'index' %} bg-[#5842BE] text-white hover:bg-[#5842BE] {% else %} text-[#8F8F8F] hover:bg-[#5842BE] hover:text-white {% endif %}"
               href="{{ url_for('index') }}"
             >
               <svg
@@ -283,7 +283,7 @@
           <li class="hs-accordion" id="projects-accordion">
             <button
               type="button"
-              class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 hs-accordion-active:text-[#5842BE] hs-accordion-active:hover:bg-transparent text-base font-medium text-[#8F8F8F] rounded-lg hover:bg-[#5842BE] hover:text-white"
+              class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-base font-medium rounded-lg {% if active_page == 'data' %} bg-[#5842BE] text-white hover:bg-[#5842BE] hs-accordion-active:hover:bg-[#5842BE] hs-accordion-active:hover:text-white {% else %} text-[#8F8F8F] rounded-lg hover:bg-[#5842BE] hover:text-white {% endif %}"
             >
               <svg
                 width="24"
@@ -374,8 +374,8 @@
 
           <li>
             <a
-              class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-base font-medium text-[#8F8F8F] rounded-lg hover:bg-[#5842BE] hover:text-white"
-              href="#"
+              class="flex items-center gap-x-3.5 py-2 px-2.5 text-base font-medium rounded-lg {% if active_page == 'classification' %} bg-[#5842BE] text-white hover:bg-[#5842BE] {% else %} text-[#8F8F8F] hover:bg-[#5842BE] hover:text-white {% endif %}"
+              href="{{ url_for('classificationPage') }}"
             >
               <svg
                 class="flex-shrink-0"
@@ -413,8 +413,8 @@
 
           <li>
             <a
-              class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-base font-medium text-[#8F8F8F] rounded-lg hover:bg-[#5842BE] hover:text-white"
-              href="#"
+              class="flex items-center gap-x-3.5 py-2 px-2.5 text-base font-medium rounded-lg {% if active_page == 'analysisResults' %} bg-[#5842BE] text-white hover:bg-[#5842BE] {% else %} text-[#8F8F8F] hover:bg-[#5842BE] hover:text-white {% endif %}"
+              href="{{ url_for('analysisResultsPage') }}"
             >
               <svg
                 class="flex-shrink-0"
@@ -432,7 +432,6 @@
                   stroke-linejoin="round"
                 />
               </svg>
-
               Hasil Analisis
             </a>
           </li>
