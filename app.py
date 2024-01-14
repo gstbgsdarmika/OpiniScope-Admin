@@ -12,19 +12,33 @@ app.config['SECRET_KEY'] = Config.SECRET_KEY
 
 @app.route('/')
 def index():
-    return render_template('index.html') 
+    active_page = 'index'
+    return render_template('index.html', active_page=active_page) 
 
 @app.route('/data-latih') 
 def trainingDataPage():
-    return render_template('trainingDataPage.html') 
+    active_page = 'data'
+    return render_template('trainingDataPage.html', active_page=active_page) 
 
 @app.route('/data-uji') 
 def testingDataPage():
-    return render_template('testingDataPage.html') 
+    active_page = 'data'
+    return render_template('testingDataPage.html', active_page=active_page) 
 
 @app.route('/hasil-preprocessing') 
 def preprocessingResultsPage():
-    return render_template('preprocessingResultsPage.html') 
+    active_page = 'data'
+    return render_template('preprocessingResultsPage.html', active_page=active_page) 
+
+@app.route('/klasifikasi') 
+def classificationPage():
+    active_page = 'classification'
+    return render_template('classificationPage.html', active_page=active_page) 
+
+@app.route('/hasil-analisis') 
+def analysisResultsPage():
+    active_page = 'analysisResults'
+    return render_template('analysisResultsPage.html', active_page=active_page) 
 
 @app.route("/preline.js")
 def serve_preline_js():

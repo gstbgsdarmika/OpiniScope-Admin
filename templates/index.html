@@ -5,7 +5,7 @@
   <div class="col-span-8">
     <div class="bg-[#5842BE] p-5 rounded-md text-white text-justify shadow-md">
       <h1 class="text-2xl font-bold">Aplikasi OpiniScope</h1>
-      <p class="pt-2">
+      <p class="pt-2 text-sm">
         OpiniScope, sebuah aplikasi canggih untuk menganalisis sentimen tweet di
         Twitter, memanfaatkan algoritma SVM (Support Vector Machine) dan seleksi
         fitur Mutual Information. Dengan integrasi teknologi terkini ini,
@@ -17,7 +17,7 @@
   </div>
   <div class="col-span-4">
     <div
-      class="flex flex-col justify-center h-[225px] p-5 bg-white rounded-md shadow-md"
+      class="flex flex-col justify-center h-[200px] p-5 bg-white rounded-md shadow-md"
     >
       <h2 class="text-lg text-[#3B3B3B] font-bold">Info Data</h2>
       <div class="flex items-center gap-3 pt-3">
@@ -77,13 +77,13 @@
             <tr>
               <th
                 scope="col"
-                class="border px-6 py-2 text-xs font-medium text-white uppercase text-start bg-[#5842BE] w-1/2"
+                class="border px-6 py-2 text-xs font-medium text-white text-start bg-[#5842BE] w-1/2"
               >
                 Fitur
               </th>
               <th
                 scope="col"
-                class="border px-6 py-2 text-xs font-medium text-white uppercase text-start bg-[#5842BE] w-1/2"
+                class="border px-6 py-2 text-xs font-medium text-white text-start bg-[#5842BE] w-1/2"
               >
                 Akurasi
               </th>
@@ -346,7 +346,7 @@
             dropShadow: {
               enabled: false,
             },
-            formatter: (value) => `${value.toFixed(1)} %`,
+            formatter: (value) => `${value.toFixed(0)} %`,
           },
           plotOptions: {
             pie: {
