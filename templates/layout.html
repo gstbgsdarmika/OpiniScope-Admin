@@ -13,6 +13,10 @@
       rel="stylesheet"
       href="{{ url_for('static',filename='dist/css/output.css') }}"
     />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='css/style.css') }}"
+    />
     <link rel="stylesheet" href="{{ url_for('serve_apexcharts_css') }}" />
   </head>
   <body class="bg-gray-50">
@@ -234,7 +238,7 @@
           <li>
             <a
               class="flex items-center gap-x-3.5 py-2 px-2.5 bg-[#5842BE] text-base font-medium text-white rounded-lg hover:bg-[#5842BE]"
-              href="#"
+              href="{{ url_for('index') }}"
             >
               <svg
                 width="24"
@@ -343,7 +347,7 @@
                 <li>
                   <a
                     class="flex items-center gap-x-3.5 py-2 px-2.5 text-base font-medium text-[#8F8F8F] rounded-lg hover:bg-[#5842BE] hover:text-white"
-                    href="#"
+                    href="{{ url_for('trainingDataPage') }}"
                   >
                     Data Latih
                   </a>
@@ -351,7 +355,7 @@
                 <li>
                   <a
                     class="flex items-center gap-x-3.5 py-2 px-2.5 text-base font-medium text-[#8F8F8F] rounded-lg hover:bg-[#5842BE] hover:text-white"
-                    href="#"
+                    href="{{ url_for('testingDataPage') }}"
                   >
                     Data Uji
                   </a>
@@ -359,7 +363,7 @@
                 <li>
                   <a
                     class="flex items-center gap-x-3.5 py-2 px-2.5 text-base font-medium text-[#8F8F8F] rounded-lg hover:bg-[#5842BE] hover:text-white"
-                    href="#"
+                    href="{{ url_for('preprocessingResultsPage') }}"
                   >
                     Hasil Preprocessing
                   </a>
