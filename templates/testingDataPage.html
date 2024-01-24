@@ -11,6 +11,7 @@
       <button
         type="button"
         class="text-white text-sm bg-[#5842BE] py-1.5 px-3.5 rounded-full inline-flex items-center gap-x-2 hover:bg-[#4427c5]"
+        data-hs-overlay="#add-data-modal"
       >
         <svg
           width="24"
@@ -32,9 +33,115 @@
         </svg>
         Add Data
       </button>
+      <div
+        id="add-data-modal"
+        class="hs-overlay hidden w-full h-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none"
+      >
+        <div
+          class="m-3 mt-0 transition-all ease-out opacity-0 hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 sm:max-w-lg sm:w-full sm:mx-auto"
+        >
+          <div
+            class="flex flex-col bg-white border shadow-sm pointer-events-auto rounded-xl"
+          >
+            <div class="flex items-center justify-between px-4 py-3 border-b">
+              <h3 class="font-bold text-gray-800">Masukan komentar</h3>
+              <button
+                type="button"
+                class="flex items-center justify-center text-sm font-semibold text-gray-800 border border-transparent rounded-full w-7 h-7 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
+                data-hs-overlay="#add-data-modal"
+              >
+                <span class="sr-only">Tutup</span>
+                <svg
+                  class="flex-shrink-0 w-4 h-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M18 6 6 18" />
+                  <path d="m6 6 12 12" />
+                </svg>
+              </button>
+            </div>
+            <div class="p-4 overflow-y-auto">
+              <form>
+                <label for="file-input" class="sr-only">Choose file</label>
+                <label
+                  for="textarea-label"
+                  class="block mb-2 text-sm font-medium"
+                  >Komentar</label
+                >
+                <textarea
+                  id="textarea-label"
+                  class="block w-full px-4 py-3 text-sm border border-gray-400 rounded-lg focus:border-[#5842BE] focus:ring-[#5842BE] disabled:opacity-50 disabled:pointer-events-none"
+                  rows="3"
+                  placeholder="Tuliskan komentar anda..."
+                ></textarea>
+                <label
+                  for="hs-select-label"
+                  class="block mt-4 mb-2 text-sm font-medium"
+                  >Sentimen</label
+                >
+                <div class="flex gap-x-6">
+                  <div class="flex">
+                    <input
+                      type="radio"
+                      name="hs-radio-group"
+                      class="shrink-0 mt-0.5 border-gray-200 rounded-full text-[#5842BE] focus:ring-[#5842BE] disabled:opacity-50 accent-[#5842BE] disabled:pointer-events-none"
+                      id="hs-radio-group-1"
+                      checked
+                    />
+                    <label
+                      for="hs-radio-group-1"
+                      class="text-sm text-gray-500 ms-2"
+                      >Positif</label
+                    >
+                  </div>
+                  <div class="flex">
+                    <input
+                      type="radio"
+                      name="hs-radio-group"
+                      class="shrink-0 mt-0.5 border-gray-200 rounded-full text-[#5842BE] focus:ring-[#5842BE] disabled:opacity-50 disabled:pointer-events-none accent-[#5842BE]"
+                      id="hs-radio-group-2"
+                    />
+                    <label
+                      for="hs-radio-group-2"
+                      class="text-sm text-gray-500 ms-2"
+                      >Negatif</label
+                    >
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div
+              class="flex items-center justify-end px-4 py-3 border-t gap-x-2"
+            >
+              <button
+                type="button"
+                class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-800 bg-white border border-gray-400 rounded-lg shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
+                data-hs-overlay="#add-data-modal"
+              >
+                Tutup
+              </button>
+              <button
+                type="button"
+                class="inline-flex items-center px-3 py-2 text-sm font-semibold text-white bg-[#5842BE] border border-transparent rounded-lg gap-x-2 hover:bg-[#4427c5] disabled:opacity-50 disabled:pointer-events-none"
+              >
+                Pilih
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
       <button
         type="button"
         class="text-white text-sm bg-[#5842BE] py-1.5 px-3.5 rounded-full inline-flex items-center gap-x-2 hover:bg-[#4427c5]"
+        data-hs-overlay="#import-file-modal"
       >
         <svg
           width="24"
@@ -57,6 +164,73 @@
 
         Import Data csv
       </button>
+      <div
+        id="import-file-modal"
+        class="hs-overlay hidden w-full h-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none"
+      >
+        <div
+          class="m-3 mt-0 transition-all ease-out opacity-0 hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 sm:max-w-lg sm:w-full sm:mx-auto"
+        >
+          <div
+            class="flex flex-col bg-white border shadow-sm pointer-events-auto rounded-xl"
+          >
+            <div class="flex items-center justify-between px-4 py-3 border-b">
+              <h3 class="font-bold text-gray-800">Pilih File .CSV</h3>
+              <button
+                type="button"
+                class="flex items-center justify-center text-sm font-semibold text-gray-800 border border-transparent rounded-full w-7 h-7 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
+                data-hs-overlay="#import-file-modal"
+              >
+                <span class="sr-only">Tutup</span>
+                <svg
+                  class="flex-shrink-0 w-4 h-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M18 6 6 18" />
+                  <path d="m6 6 12 12" />
+                </svg>
+              </button>
+            </div>
+            <div class="p-4 overflow-y-auto">
+              <form>
+                <label for="file-input" class="sr-only">Choose file</label>
+                <input
+                  type="file"
+                  name="file-input"
+                  id="file-input"
+                  accept=".csv"
+                  class="block w-full text-sm border border-gray-400 rounded-lg shadow-sm focus:z-10 focus:border-[#5842BE] focus:ring-[#5842BE] disabled:opacity-50 disabled:pointer-events-none file:bg-gray-50 file:border-0 file:me-4 file:py-3 file:px-4"
+                />
+              </form>
+            </div>
+            <div
+              class="flex items-center justify-end px-4 py-3 border-t gap-x-2"
+            >
+              <button
+                type="button"
+                class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-800 bg-white border border-gray-300 rounded-lg shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
+                data-hs-overlay="#import-file-modal"
+              >
+                Tutup
+              </button>
+              <button
+                type="button"
+                class="inline-flex items-center px-3 py-2 text-sm font-semibold text-white bg-[#5842BE] border border-transparent rounded-lg gap-x-2 hover:bg-[#4427c5] disabled:opacity-50 disabled:pointer-events-none"
+              >
+                Pilih
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
       <button
         type="button"
         class="text-white text-sm bg-[#5842BE] py-1.5 px-3.5 rounded-full inline-flex items-center gap-x-2 hover:bg-[#4427c5]"
@@ -539,7 +713,7 @@
                 <div class="inline-block hs-tooltip">
                   <button
                     type="button"
-                    class="hs-tooltip-toggle group min-h-[38px] min-w-[38px] flex justify-center items-center text-gray-400 hover:text-blue-600 p-2 text-sm rounded-lg focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-gray-500 dark:hover:text-blue-500 dark:focus:bg-white/10"
+                    class="hs-tooltip-toggle group min-h-[38px] min-w-[38px] flex justify-center items-center text-gray-400 hover:text-blue-600 p-2 text-sm rounded-lg focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
                   >
                     <span class="text-xs text-gray-500 group-hover:hidden"
                       >•••</span
