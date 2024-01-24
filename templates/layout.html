@@ -103,103 +103,33 @@
                 aria-labelledby="hs-dropdown-with-header"
               >
                 <div class="py-3 px-5 -m-2 bg-[#5842BE] rounded-t-lg">
-                  <p class="text-sm text-white">Signed in as</p>
+                  <p class="text-sm text-white">Masuk sebagai</p>
                   <p class="text-sm font-medium text-white">
                     BgsDarmika@gmail.com
                   </p>
                 </div>
                 <div class="py-2 mt-2 first:pt-0 last:pb-0">
                   <a
-                    class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-[#5842BE] focus:ring-2 focus:ring-blue-50"
-                    href="#"
+                    class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-[#5842BE] focus:ring-2 focus:ring-blue-50 hover:text-white"
+                    href="{{ url_for('logout') }}"
                   >
                     <svg
                       class="flex-shrink-0 w-4 h-4"
-                      xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
-                      <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
-                    </svg>
-                    Newsletter
-                  </a>
-                  <a
-                    class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-[#5842BE] focus:ring-2 focus:ring-blue-50"
-                    href="#"
-                  >
-                    <svg
-                      class="flex-shrink-0 w-4 h-4"
                       xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
                     >
                       <path
-                        d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"
+                        d="M17 16.5L21 12.5M21 12.5L17 8.5M21 12.5H7M13 16.5V17.5C13 18.2956 12.6839 19.0587 12.1213 19.6213C11.5587 20.1839 10.7956 20.5 10 20.5H6C5.20435 20.5 4.44129 20.1839 3.87868 19.6213C3.31607 19.0587 3 18.2956 3 17.5V7.5C3 6.70435 3.31607 5.94129 3.87868 5.37868C4.44129 4.81607 5.20435 4.5 6 4.5H10C10.7956 4.5 11.5587 4.81607 12.1213 5.37868C12.6839 5.94129 13 6.70435 13 7.5V8.5"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
                       />
-                      <path d="M3 6h18" />
-                      <path d="M16 10a4 4 0 0 1-8 0" />
                     </svg>
-                    Purchases
-                  </a>
-                  <a
-                    class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-[#5842BE] focus:ring-2 focus:ring-blue-50"
-                    href="#"
-                  >
-                    <svg
-                      class="flex-shrink-0 w-4 h-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path
-                        d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"
-                      />
-                      <path d="M12 12v9" />
-                      <path d="m8 17 4 4 4-4" />
-                    </svg>
-                    Downloads
-                  </a>
-                  <a
-                    class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-[#5842BE] focus:ring-2 focus:ring-blue-50"
-                    href="#"
-                  >
-                    <svg
-                      class="flex-shrink-0 w-4 h-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                      <circle cx="9" cy="7" r="4" />
-                      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                    </svg>
-                    Team Account
+                    Keluar
                   </a>
                 </div>
               </div>
@@ -439,7 +369,7 @@
           <li>
             <a
               class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-base font-medium text-[#8F8F8F] rounded-lg hover:bg-[#5842BE] hover:text-white"
-              href="#"
+              href="{{ url_for('login') }}"
             >
               <svg
                 class="flex-shrink-0"
